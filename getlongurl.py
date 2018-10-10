@@ -29,7 +29,10 @@ if __name__ == "__main__":
 
     if len(sys.argv) > 1:
         resp = get_url(sys.argv[1])
-        print(resp.history)
+        print("[*] History: \n", resp.history)
+        print("[*] Cookies (last cookie): ")
+        print(resp.cookies)
+        print("[*] URL: ")
         print(resp.url)
     else:
         print("USAGE: {} <provided_url>".format(sys.argv[0]))
