@@ -25,6 +25,21 @@ def get_url(provided_url=None):
     return resp
 
 
+def output_help():
+    """Output help usage (multiline)"""
+    print("USAGE: {} <provided_url>".format(sys.argv[0]))
+    print("\nExamples: ")
+    print(
+        """
+    {0} {1}
+    {0} {2}
+
+    """.format(
+            sys.argv[0], "https://www.google.com/", "http://www.google.com/"
+        )
+    )
+
+
 if __name__ == "__main__":
 
     if len(sys.argv) > 1:
@@ -35,4 +50,4 @@ if __name__ == "__main__":
         print("[*] URL: ")
         print(resp.url)
     else:
-        print("USAGE: {} <provided_url>".format(sys.argv[0]))
+        output_help()
